@@ -10,7 +10,7 @@
     li:hover a {
       padding-left: 30px;
     }
-    li{
+    li {
       padding: 15px;
     }
     a {
@@ -26,5 +26,24 @@
     i {
       margin-right: 16px;
     }
+  }
+}
+@media (max-width: 1000px) {
+  .sidebar {
+    width: 100px;
+    ul {
+      li:hover a {
+        padding-left: 0;
+      }
+      a {
+        white-space: nowrap;
+        padding-left: 40px;
+        overflow: hidden;
+      }
+    }
+  }
+  .contextBx .content .title {
+    flex-direction: column;
+    gap: 20px;
   }
 }

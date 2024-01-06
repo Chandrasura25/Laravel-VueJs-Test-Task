@@ -4,6 +4,11 @@
   box-sizing: border-box;
   font-family: sans-serif;
 }
+.notification {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 .navhead {
   position: absolute;
   top: 0;
@@ -92,7 +97,7 @@
             color: #21455e;
           }
           a:hover {
-            color: #0DABD8;
+            color: #0dabd8;
           }
         }
       }
@@ -152,15 +157,86 @@
     }
   }
 }
-@media (max-width: 768px) {
-  .navhead ul {
-    display: block;
+@media (max-width: 1000px) {
+  .notification {
+    display: none !important;
+    &.active {
+      width: 100%;
+      position: fixed;
+      top: 58px;
+      left: 0;
+      display: flex !important;
+      justify-content: center;
+      align-items: normal;
+      flex-direction: column;
+      background: #fff;
+      .firstNav {
+        margin: 0;
+        li {
+          margin-top: 10px;
+          ul {
+            position: relative;
+            top: 0;
+            right:0;
+            display: block;
+            background: none;
+            box-shadow: none;
+            border: none;
+            border-radius: 0;
+            white-space: nowrap;
+            opacity: 1;
+            visibility: visible;
+            padding: 0;
+            li{
+              border-bottom: none;
+            }
+          }
+        }
+      }
+      ul {
+        display: block;
+        li {
+          display: block;
+          margin-left: 0;
+          width: 100%;
+          &:hover {
+            border-top: none;
+            border-bottom: 3px solid #2196f3;
+          }
+          ul{
+            width: 100%;
+            position: relative;
+            right:0;
+            top:0;
+          }
+        }
+        &:nth-child(2) {
+          display: flex;
+          justify-content: space-between;
+          margin: 10px 20px;
+          li{
+            border-right: none;
+          }
+        }
+      }
+    }
   }
-  header ul li {
-    display: block;
-  }
-  header ul li ul {
-    width: 100%;
-    z-index: 1;
+  #menuToggle {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    background: url(/src/assets//menu.png);
+    filter: invert(1);
+    background-size: 30px;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+    &.active {
+      background: url(/src/assets/close.png);
+      background-size: 25px;
+      background-repeat: no-repeat;
+      background-position: center;
+      filter: invert(1);
+    }
   }
 }

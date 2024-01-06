@@ -6,10 +6,12 @@
       </div>
       <p>Adilo</p>
     </a>
-    <ul class="firstNav">
+    <div id="menuToggle" @click="toggleMenu" :class="{ active: toggleActive }"></div>
+    <div class="notification" :class="{ active: toggleActive }">
+      <ul class="firstNav">
       <li><a href="#">Projects</a></li>
       <li>
-        <a href="#">Tools & Apps <i class='bx bx-chevron-down'></i></a>
+        <a href="#">Tools & Apps <i class="bx bx-chevron-down"></i></a>
         <ul>
           <li><a href="#">Snapbyte Recorder</a></li>
           <li><a href="#">AudioBounce</a></li>
@@ -26,9 +28,9 @@
       <li>
         <a href="#">
           <div>
-           <span>
-            <img src="/src/assets/swarm.svg" />
-           </span>
+            <span>
+              <img src="/src/assets/swarm.svg" />
+            </span>
             <div>
               <p>Cody Fisher</p>
               <p>Cody Fisher@gmail.com</p>
@@ -37,5 +39,20 @@
         </a>
       </li>
     </ul>
+    </div>
   </header>
 </template>
+<script>
+export default {
+  data() {
+    return {
+      toggleActive: false,
+    };
+  },
+  methods: {
+    toggleMenu() {
+      this.toggleActive = !this.toggleActive;
+    },
+  },
+};
+</script>

@@ -46,7 +46,7 @@ import Sidebar from "./Sidebar.vue";
               <tr v-for="(image, index) in imageArray" :key="index">
                 <td>
                   <div class="img">
-                    <video :src="image.img" alt="image"></video>
+                    <img :src="image.img" alt="image">
                   </div>
                 </td>
                 <td>
@@ -109,35 +109,35 @@ export default {
     return {
       imageArray: [
         {
-          img: "path/to/image1.jpg",
+          img: "/src/assets/img.png",
           title: "Image 1",
           description: "Description for Image 1",
           views: "322",
           size: "200",
         },
         {
-          img: "path/to/image2.jpg",
+          img: "/src/assets/img.png",
           title: "Image 2",
           description: "Description for Image 2",
           views: "323",
           size: "400",
         },
         {
-          img: "path/to/image3.jpg",
+          img: "/src/assets/img.png",
           title: "Image 3",
           description: "Description for Image 3",
           views: "323",
           size: "300",
         },
         {
-          img: "path/to/image4.jpg",
+          img: "/src/assets/img.png",
           title: "Image 4",
           description: "Description for Image 4",
           views: "322",
           size: "250",
         },
         {
-          img: "path/to/image5.jpg",
+          img: "/src/assets/img.png",
           title: "Image 5",
           description: "Description for Image 5",
           views: "323",
